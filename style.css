@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    overflow: hidden; /* Hide horizontal overflow */
 }
 
 .welcome {
@@ -39,5 +40,16 @@ body {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    display: none; /* Hide initially */
+    z-index: 1; /* Ensure it's above the arrow */
+}
+
+/* Arrow icon */
+#arrow-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 40px;
+    font-size: 24px;
+    transform: rotate(45deg); /* Rotate the square to make it an arrow */
+    color: #fff;
+    z-index: 0; /* Place it behind the button */
 }
