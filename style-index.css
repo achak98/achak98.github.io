@@ -1,0 +1,96 @@
+/* Initial screen styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato';
+    overflow: hidden; /* Hide horizontal overflow */
+    background-color: #FDFD96;
+}
+
+.welcome {
+    background-color: #FDFD96; /* Egg yolk color */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-content {
+    text-align: center;
+    color: #fff;
+}
+
+
+.welcome h1 {
+    font-size: 28px;
+}
+
+.welcome p {
+    font-size: 16px;
+}
+
+#continue-button span {
+    font-family: 'Roboto';
+    font-size: 16px;
+    margin-right: 10px; /* Adjust the margin as needed to control spacing between text and icon */
+}
+#continue-button {
+    background-color: #FDFD96;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1; /* Ensure it's above the arrow */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align content in the center */
+    opacity: 0; /* Initially set the opacity to 0 */
+    transition: opacity 1s ease-in-out; /* Apply a smooth opacity transition */
+}
+
+/* Apply blend-in effect when the .blend-in class is added */
+#continue-button.blend-in {
+    opacity: 1; /* Set the opacity to 1 to reveal the button */
+}
+
+/* Hide the button on slide-up */
+.welcome.slide-up {
+    animation: slide-up 1s ease-in-out forwards; /* Apply a sliding animation */
+    transform: translateY(-100%); /* Start with the content hidden below */
+}
+@keyframes slide-up {
+    0% {
+        transform: translateY(0%); /* Start with the content hidden below */
+    }
+    100% {
+        transform: translateY(-100%); /* Slide the content up to its original position */
+    }
+}
+/*
+.welcome {
+    position: relative;
+    background-color: #FFCC00;  Egg yolk color 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    animation: slide-up 0.5s ease-in-out forwards; 
+    transform: translateY(100%); 
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100%); 
+    }
+    100% {
+        transform: translateY(0%); 
+    }
+}*/
