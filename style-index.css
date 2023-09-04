@@ -45,8 +45,8 @@ body {
     cursor: pointer;
     border-radius: 5px;
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 5vh; /* 5% of the viewport height */
+    right: 5vw; /* 5% of the viewport width */
     z-index: 1; /* Ensure it's above the arrow */
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Vertically align content in the center */
