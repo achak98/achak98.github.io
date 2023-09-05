@@ -1,62 +1,100 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Lato';
-    overflow: hidden; /* Hide horizontal overflow */
+    font-family: Arial, sans-serif;
     background-color: #FDFD96;
-}
-/* Tile styles */
-.tile-container{
-    justify-content: center;
-    align-items: center;
     display: flex;
-}
-.tile {
-    width: 300px;
-    height: 300px;
-    background-color: #FDFD96;
-    overflow: hidden;
-    position: relative;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-.tile:hover {
-    transform: scale(1.05); /* Scale up on hover */
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); /* Add a shadow on hover */
+.circle-layout {
+    position: relative;
+    opacity: 0; /* Initially set the opacity to 0 */
+    transition: opacity 1s ease-in-out; /* Apply a smooth opacity transition */
 }
 
-/* Tile content */
-.tile-content {
-    width: 100%;
-    height: 100%;
-    background-image: url('your-image.jpg'); /* Set your background image */
-    background-size: cover;
-    background-position: center;
+.blend-in {
+    opacity: 1; /* Set the opacity to 1 to reveal the button */
+}
+
+.outer-circle {
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 40vw; /* Adjust the outer circle size as a percentage of the viewport width */
+    height: 40vw; /* Adjust the outer circle size as a percentage of the viewport width */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inner-circles {
+    display: flex;
+    flex-wrap: wrap;
+    width: 28vw; /* Adjust the maximum width of the inner circles as needed */
+    height: 28vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.circle {
+    --radius: 20vw; /* Adjust the inner circle radius as a percentage of the outer circle's width */
+    --angle: 0deg; /* Set the initial angle for each circle */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #000;
+    width: 25%; /* Adjust the inner circle size as a percentage of the outer circle's width */
+    padding-top: 25%; /* Maintain a square shape for each inner circle */
+    border-radius: 50%;
+    background-color: white;
+    color: white;
+    text-decoration: none;
+    margin: 10%; /* Adjust the margin between inner circles as needed */
+    transition: transform 0.3s ease-in-out;
+    position: absolute;
+    top: calc(50% - var(--radius));
+    left: calc(50% - var(--radius));
+    transform-origin: center center;
+    transform: rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle)));
+    --transformed-top: 0; /* Custom property to store transformed top position */
+    --transformed-left: 0; /* Custom property to store transformed left position */
+    --hover-radius: 17vw;
+}
+
+.circle:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.2) rotate(var(--angle)) translate(var(--hover-radius)) rotate(calc(-1 * var(--angle))); /* Scale up on hover */
+}
+
+/* Adjust the angle for each inner circle*/
+.circle:nth-child(1) { --angle: 0deg; }
+.circle:nth-child(2) { --angle: -72deg; }
+.circle:nth-child(3) { --angle: -144deg; }
+.circle:nth-child(4) { --angle: -216deg; }
+.circle:nth-child(5) { --angle: -288deg; }
+
+.circle::after {
+    content: attr(data-text); /* Use the 'data-text' attribute for custom text */
+    font-family: 'Roboto';
+    font-size: 1vw; /* Adjust the font size as needed */
     text-align: center;
-    transition: opacity 0.3s ease-in-out;
+    line-height: 1.2;
+    position: absolute;
+    top: 50%; /* Center vertically within the inner circle */
+    left: 50%; /* Center horizontally within the inner circle */
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Place text above the circle background */
+    color:black;
 }
 
-.tile:hover .tile-content {
-    opacity: 0.8; /* Add a blending effect on hover */
-}
+/* Example for individual text for each circle */
+.circle:nth-child(1)::after { content: "Background"; }
+.circle:nth-child(2)::after { content: "Work Experience"; }
+.circle:nth-child(3)::after { content: "Extracurriculars"; }
+.circle:nth-child(4)::after { content: "Projects"; }
+.circle:nth-child(5)::after { content: "Achievements"; }
 
-/* Text styles */
-.tile-content h2 {
-    font-size: 24px;
-}
-
-.tile-content p {
-    font-size: 16px;
-}
-
-/* Add more styles as needed */

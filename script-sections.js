@@ -1,55 +1,27 @@
-const continueButton = document.getElementById('continue-button');
-const welcome = document.querySelector('.welcome');
+const circleLayout = document.getElementById('circle-layout');
 
-// Delay the blend-in effect and typing animation
+// After a short delay, remove the 'hidden' class to trigger the fade-in effect
 setTimeout(() => {
-    const continueButton = document.getElementById('continue-button');
-    continueButton.classList.add('blend-in');
-    typeText(); // Start the typing animation
-}, 3500); // Adjust the delay as needed
+    circleLayout.classList.add('blend-in');;
+}, 100); // Adjust the delay as needed
 
-continueButton.addEventListener('click', (event) => {
-    // Add the slide-up class to initiate the animation
-    welcome.classList.add('slide-up');
+// Select all circle elements with class .circle
+const circles = document.querySelectorAll('.circle');
 
-    // Listen for the end of the animation
-    welcome.addEventListener('animationend', () => {
-        // After the animation, navigate to another page
-        window.location.href = 'sections.html';
-    });
-
-    // Prevent the default button click behavior
-    event.preventDefault();
-});
-
-const text = "Hello, I am Abhirup Chakravarty.\nWelcome to my portfolio.";
-const typingElement = document.getElementById("welcome-content");
-let headerText = ""; // Initialize an empty string to accumulate header text
-let paragraphText = ""; // Initialize an empty string to accumulate paragraph text
-let isHeader = true;
-let remainingText = text;
-function typeText() {
-    const char = remainingText.charAt(0);
-    remainingText = remainingText.substring(1);
+// Loop through each circle element
+circles.forEach((circle, index) => {
+    // Get the computed transform property for the current circle
+    const transformMatrix = getComputedStyle(circle).getPropertyValue('transform');
     
-    if (char === "\n") {
-        isHeader = false;
-    }
-
-    if (isHeader) {
-        headerText += char; // Accumulate header text
-    } else {
-        paragraphText += char; // Accumulate paragraph text
-    }
-
-    typingElement.innerHTML = `<h1>${headerText}</h1><p>${paragraphText}</p>`;
-
-    if (remainingText.length > 0) {
-        setTimeout(typeText, 50); // Adjust the delay to control typing speed
-    }
-}
-
-typeText();
-
-
-
+    // Parse the matrix string into an array of values
+    const matrixValues = transformMatrix.match(/[-0-9.]+/g);
+    
+    // Extract the second-to-last value (transformedTop) and last value (transformedLeft)
+    const transformedTop = parseFloat(matrixValues[matrixValues.length - 2]);
+    const transformedLeft = parseFloat(matrixValues[matrixValues.length - 1]);
+    
+    console.log(`Transformed Top for Circle ${index + 1}:`, transformedTop);
+    console.log(`Transformed Left for Circle ${index + 1}:`, transformedLeft);
+    circle.style.setProperty('--transformed-top', `${transformedTop}px`);
+    circle.style.setProperty('--transformed-left', `${transformedLeft}px`);
+});
