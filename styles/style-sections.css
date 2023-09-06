@@ -44,22 +44,22 @@ body {
 .inner-circles {
     display: flex;
     flex-wrap: wrap;
-    width: 26.5vw; /* Adjust the maximum width of the inner circles as needed */
-    height: 26.5vw;
+    width: 24vw; /* Adjust the maximum width of the inner circles as needed */
+    height: 24vw;
     position: absolute;
     top: 50%;
     left: 50%;
 }
 
 .circle {
-    --radius: 20vw; /* Adjust the inner circle radius as a percentage of the outer circle's width */
+    --radius: 19vw; /* Adjust the inner circle radius as a percentage of the outer circle's width */
     --angle: 0deg; /* Set the initial angle for each circle */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%; /* Adjust the inner circle size as a percentage of the outer circle's width */
-    padding-top: 30%; /* Maintain a square shape for each inner circle */
+    width: 40%; /* Adjust the inner circle size as a percentage of the outer circle's width */
+    padding-top: 40%; /* Maintain a square shape for each inner circle */
     border-radius: 50%;
     background-color: white;
     color: white;
@@ -70,7 +70,7 @@ body {
     top: calc(50% - var(--radius));
     left: calc(50% - var(--radius));
     transform-origin: center center;
-    --hover-radius: 13vw;
+    --hover-radius: 12vw;
     --after-color: #000;
     --after-opacity: 0;
     --transform: ;
@@ -93,7 +93,7 @@ body {
 .circle::after {
     content: attr(data-text); /* Use the 'data-text' attribute for custom text */
     font-family: 'Roboto';
-    font-size: 1vw; /* Adjust the font size as needed */
+    font-size: 1.3vw; /* Adjust the font size as needed */
     text-align: center;
     line-height: 1.2;
     position: absolute;
