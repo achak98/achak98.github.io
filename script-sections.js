@@ -38,7 +38,7 @@ window.onload = function() {
 };
 setTimeout(() => {
     typeText();
-}, 2000); // Adjust the delay as needed
+}, 1500); // Adjust the delay as needed
 
 circles.forEach((circle) => {
     circle.addEventListener('click', (event) => {
