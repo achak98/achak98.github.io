@@ -4,11 +4,11 @@ body {
     padding: 0;
     font-family: 'Lato';
     overflow: hidden; /* Hide horizontal overflow */
-    background-color: #FDFD96;
+    background-color: #ffffff;
 }
 
 .welcome {
-    background-color: #FDFD96; /* Egg yolk color */
+    background-color: #ffffff; /* Egg yolk color */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -29,6 +29,7 @@ body {
 
 .welcome p {
     font-size: 16px;
+    color: #ec8669;
 }
 
 #continue-button span {
@@ -37,7 +38,7 @@ body {
     margin-right: 10px; /* Adjust the margin as needed to control spacing between text and icon */
 }
 #continue-button {
-    background-color: #FDFD96;
+    background-color: #ec8669;
     color: #000;
     border: none;
     padding: 10px 20px;
@@ -72,25 +73,34 @@ body {
         transform: translateY(-100%); /* Slide the content up to its original position */
     }
 }
-/*
-.welcome {
-    position: relative;
-    background-color: #FFCC00;  Egg yolk color 
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    overflow: hidden;
-    animation: slide-up 0.5s ease-in-out forwards; 
-    transform: translateY(100%); 
+
+.container {
+    width: 100%; /* Adjust the outer circle size as a percentage of the viewport width */
+    height: 5%; /* Adjust the outer circle size as a percentage of the viewport width */
+    position: absolute;
+    top: 95%;
+    left: 0%;
+    background-color: #4f646f;
 }
 
-@keyframes slide-up {
-    0% {
-        transform: translateY(100%); 
-    }
-    100% {
-        transform: translateY(0%); 
-    }
-}*/
+.person {
+    position: absolute;
+    bottom: -10%;
+    left: 0%;
+    width: 30;
+    height: 30;
+
+    color: #000;
+    z-index: 1000001;
+}
+
+.trex {
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    width: 150px;
+    height: 75px;
+
+    transition: transform 0.7s ease;
+    z-index: 1000001;
+}
