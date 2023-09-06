@@ -1,13 +1,23 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #fff;
+    font-family: 'Lato';
+    background-color: #4f646f;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
+}
+
+.joke {
+    position: fixed;
+    top: 2vw;
+    left: 2vw;
+    height: 3vw;
+    font-size: medium;
+    z-index: 999; /* Ensure it's above other content */
+    color: whitesmoke;
 }
 
 .circle-layout {
@@ -21,7 +31,7 @@ body {
 }
 
 .outer-circle {
-    border: 5px solid #4F646F;
+    border: 5px solid #fff;
     border-radius: 50%;
     width: 36vw; /* Adjust the outer circle size as a percentage of the viewport width */
     height: 36vw; /* Adjust the outer circle size as a percentage of the viewport width */
@@ -55,7 +65,7 @@ body {
     color: white;
     text-decoration: none;
     margin: 10%; /* Adjust the margin between inner circles as needed */
-    transition: transform 0.8s ease-in-out;
+    transition: transform 0.7s ease-in-out;
     position: absolute;
     top: calc(50% - var(--radius));
     left: calc(50% - var(--radius));
@@ -93,6 +103,7 @@ body {
     z-index: 1; /* Place text above the circle background */
     color: var(--after-color);
     opacity: var(--after-opacity);
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Example for individual text for each circle */

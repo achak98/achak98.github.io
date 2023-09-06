@@ -1,5 +1,22 @@
 const circleLayout = document.getElementById('circle-layout');
 
+const text = "These are the five chakras of my life, and God, oh God, am I trying to align them...";
+const typingElement = document.getElementById("joke");
+let paragraphText = ""; // Initialize an empty string to accumulate paragraph text
+let remainingText = text;
+function typeText() {
+    const char = remainingText.charAt(0);
+    remainingText = remainingText.substring(1);
+    
+    paragraphText += char; // Accumulate paragraph text
+
+    typingElement.innerHTML = `<p>${paragraphText}</p>`;
+
+    if (remainingText.length > 0) {
+        setTimeout(typeText, 50); // Adjust the delay to control typing speed
+    }
+}
+
 // After a short delay, remove the 'hidden' class to trigger the fade-in effect
 setTimeout(() => {
     circleLayout.classList.add('blend-in');;
@@ -19,6 +36,9 @@ window.onload = function() {
         }, 500);
     });
 };
+setTimeout(() => {
+    typeText();
+}, 2000); // Adjust the delay as needed
 
 circles.forEach((circle) => {
     circle.addEventListener('click', (event) => {

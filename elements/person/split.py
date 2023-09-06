@@ -11,8 +11,8 @@ def split_gif(input_file, output_folder):
             frame.save(f"{output_folder}/frame_{i:03d}.png", "PNG")
 
 # Usage
-input_gif = "run.gif"        # Replace with your input GIF file
-output_frames_folder = "run"  # Replace with the output folder
+input_gif = "idle.gif"        # Replace with your input GIF file
+output_frames_folder = "idle"  # Replace with the output folder
 
 # Create the output folder if it doesn't exist
 import os

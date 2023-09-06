@@ -22,7 +22,6 @@ body {
     color: #fff;
 }
 
-
 .welcome h1 {
     font-size: 24px;
 }
@@ -60,27 +59,26 @@ body {
     opacity: 1; /* Set the opacity to 1 to reveal the button */
 }
 
-/* Hide the button on slide-up */
-.welcome.slide-up {
-    animation: slide-up 1s ease-in-out forwards; /* Apply a sliding animation */
-    transform: translateY(-100%); /* Start with the content hidden below */
-}
-@keyframes slide-up {
-    0% {
-        transform: translateY(0%); /* Start with the content hidden below */
-    }
-    100% {
-        transform: translateY(-100%); /* Slide the content up to its original position */
-    }
-}
-
-.container {
+.dinoperson {
     width: 100%; /* Adjust the outer circle size as a percentage of the viewport width */
-    height: 5%; /* Adjust the outer circle size as a percentage of the viewport width */
+    height: 7%; /* Adjust the outer circle size as a percentage of the viewport width */
     position: absolute;
-    top: 95%;
+    bottom: 0%;
     left: 0%;
     background-color: #4f646f;
+}
+
+
+.deadlines {
+    bottom: 65%;
+    position: absolute;
+    color: #fff;
+}
+
+.me {
+    bottom: 60%;
+    position: absolute;
+    color: #fff;
 }
 
 .person {
@@ -103,4 +101,29 @@ body {
 
     transition: transform 0.7s ease;
     z-index: 1000001;
+}
+
+/* Hide the button on slide-up */
+.dinoperson.slide-up {
+    animation: slide-up 1.5s ease-in-out forwards; /* Apply a sliding animation */
+}
+
+.welcome.slide-up {
+    animation: slide-up-window 1s ease-in-out forwards; /* Apply a sliding animation */
+}
+
+@keyframes slide-up-window {
+    0% {
+        transform: translateY(0%); /* Start with the content hidden below */
+    }
+    100% {
+        transform: translateY(-100%); /* Slide the content up to its original position */
+    }
+}
+@keyframes slide-up {
+    0% {
+    }
+    100% {
+        transform: scale(30) translateY(-40%);
+    }
 }
