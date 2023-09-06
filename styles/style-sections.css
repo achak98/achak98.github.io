@@ -71,7 +71,7 @@ body {
     left: calc(50% - var(--radius));
     transform-origin: center center;
     --hover-radius: 13vw;
-    --after-color: rgb(0,0,0);
+    --after-color: #000;
     --after-opacity: 0;
     --transform: ;
     transform: var(--transform);

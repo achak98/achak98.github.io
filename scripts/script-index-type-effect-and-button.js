@@ -15,7 +15,7 @@ continueButton.addEventListener('click', (event) => {
     // Listen for the end of the animation
     dinoperson.addEventListener('animationend', () => {
         // After the animation, navigate to another page
-        window.location.href = 'sections.html';
+        window.location.href = 'pages/sections.html';
     });
 
     // Prevent the default button click behavior
