@@ -31,7 +31,7 @@ body {
 }
 
 .outer-circle {
-    border: 5px solid #fff;
+    border: 5px solid whitesmoke;
     border-radius: 50%;
     width: 36vw; /* Adjust the outer circle size as a percentage of the viewport width */
     height: 36vw; /* Adjust the outer circle size as a percentage of the viewport width */
@@ -61,8 +61,8 @@ body {
     width: 40%; /* Adjust the inner circle size as a percentage of the outer circle's width */
     padding-top: 40%; /* Maintain a square shape for each inner circle */
     border-radius: 50%;
-    background-color: white;
-    color: white;
+    background-color: whitesmoke;
+    color: whitesmoke;
     text-decoration: none;
     margin: 10%; /* Adjust the margin between inner circles as needed */
     transition: transform 0.7s ease-in-out;
@@ -84,10 +84,10 @@ body {
 
 /* Adjust the angle for each inner circle*/
 .circle:nth-child(1) { --angle: -0deg;  background-color: #ec8669;}
-.circle:nth-child(2) { --angle: -72deg;  background-color: #fdfd96;}
+.circle:nth-child(2) { --angle: -72deg;  background-color: #F4C94F;}
 .circle:nth-child(3) { --angle: -144deg; background-color: #6A7FDB;}
 .circle:nth-child(4) { --angle: -216deg; background-color: #ec8669;}
-.circle:nth-child(5) { --angle: -288deg; background-color: #fdfd96;}
+.circle:nth-child(5) { --angle: -288deg; background-color: #F4C94F;}
 
 
 .circle::after {
@@ -125,18 +125,136 @@ body {
 .logo-container {
     position: fixed;
     top: 2vw;
-    right: 2vw;
-    z-index: 999; /* Ensure it's above other content */
+    right: 2vw; /* Adjust the right property to align horizontally */
+    z-index: 999;
+    height: min-content;
+    width: min-content;
 }
 
 /* Logo styles */
 .logo-container a {
-    display: block; /* Make the entire area clickable */
-    margin-bottom: 10px; /* Adjust as needed for spacing between logos */
+    display: block;
+    margin-bottom: 1vw;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .logo-container img {
-    width: 40px; /* Adjust the logo size as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 2.8vw;
+    height: 2.8vw;
 }
+
+.bar {
+    border-radius: 1vw;
+    position: relative; /* Change to relative positioning */
+    width: 3.2vw;
+    height: 0.4vh;
+    margin-top: 0.4vw;
+    background-color: #f4c94f;
+    transition: 0.5s;
+}
+
+.hamburger__bar1,
+.hamburger__bar2,
+.hamburger__bar3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hamburger__bar1 {
+    transform: translate(-50%, -50%) translateY(-0.8vw);
+    position: absolute; /* Change to absolute positioning */
+}
+
+.hamburger__bar3 {
+    transform: translate(-50%, -50%) translateY(0.8vw);
+    position: absolute; /* Change to absolute positioning */
+}
+
+
+.click .hamburger__bar1 {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.click .hamburger__bar2{
+    opacity: 0;
+    
+}
+.click .hamburger__bar3{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.openDownloadWindowDiv{
+    position: absolute;
+    display: block;
+    opacity: 0;
+    margin-top: 2vw;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.download_button_1 div,
+.download_button_2 div {
+    display: flex;
+    align-items: center; /* Vertically center align text and image */
+}
+.download_button_2{
+    transform: translateY(2.8vw);
+}
+
+.download-text{
+    color:whitesmoke
+}
+
+.logo-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Three columns for icons and text */
+    grid-gap: 10px; /* Adjust the gap between grid items as needed */
+    align-items: center; /* Vertically center-align grid items */
+}
+
+/* Style for individual grid items */
+.github,
+.linkedin,
+.openDownloadWindowDiv,
+.download_button_1,
+.download_button_2{
+    text-align: center; /* Center-align text */
+    position: relative; /* Enable relative positioning */
+}
+.header__hamburger {
+    position: relative; /* Enable relative positioning */
+    margin-bottom: 2vw;
+    margin-top: 1vw; /* Adjust as needed for spacing between logos */
+    cursor: pointer;
+    display: block;
+}
+
+.openDownloadWindowDiv.click {
+    opacity: 1; /* Initially set the opacity to 0 */
+    transition: opacity 0.5s ease-in-out; /* Apply a smooth opacity transition */
+}
+
+/* Style for icons (images) */
+.github img,
+.linkedin img,
+.download_button_1 img,
+.download_button_2 img {
+    width: 3.8vw; /* Adjust the icon size as needed */
+    height: 3.8vw; /* Maintain aspect ratio */
+    display: block; /* Ensure images don't affect the text layout */
+    margin: 0 auto; /* Center-align images horizontally */
+}
+
+/* Style for text */
+.github p,
+.linkedin p,
+.download_button_1 p,
+.download_button_2 p {
+    color: whitesmoke;
+    margin: 0; /* Remove default margin for paragraphs */
+}
+
 

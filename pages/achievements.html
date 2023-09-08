@@ -7,6 +7,71 @@
     <link rel="stylesheet" href="../styles/style-achieve.css">
 </head>
 <body>
-        <script src="../scripts/script-achieve.js"></script>
+    <div class="circle-bar">
+        <div class="circle selected" onclick="selectParagraph(1)"></div>
+        <div class="circle" onclick="selectParagraph(2)"></div>
+        <div class="circle" onclick="selectParagraph(3)"></div>
+        <div class="line"></div>
+    </div>
+      
+    <div class="content">
+        <div class="paragraph selected-paragraph blend-in" id="paragraph1">
+            Some may say it all started with my undergraduate degree, but my love for making 
+            computers do the cha-cha has been much longer. However, going back that far might 
+            make this page unnecessarily dreary, and I'm cool, I promise... So we will just 
+            delve headfirst into why you should say yes to whatever question you had that 
+            necessitated you to look at this portfolio today. 
+        </div>
+        <div class="paragraph never-shown unselected-paragraph-down" id="paragraph2">
+            I am a software engineer with experience building a Digital Retail System (DRS)
+            and enhancing a Dealership Management System (DMS) in a SaaS architecture. 
+            I <s>like</s> love AI. I know this has become a throwaway word, but the possibility 
+            of an artificially sentient being drove me to coding in the first place. I have 
+            always been actively engaging with the community, albeit mostly passively, that 
+            supports the growth of it.
+        </div>
+        <div class="paragraph never-shown unselected-paragraph-down" id="paragraph3">
+            ipsum dorrito pancakes3
+        </div>
+    </div>
+    <div class="cross-button" id="cross-button">
+        <a href="sections.html">
+            <img src="../elements/cross-white.png" alt="Logo 1">
+        </a>
+    </div>
+    <div id="logo-container" class="logo-container">
+        <div class="openDownloadWindowDiv">
+            <div class="download_button_1">
+                <a href="link-to-resume-1">
+                    <img src="../elements/download-white.png" alt="Resume Icon">
+                </a>
+                <p>SDE CV</p> <!-- Text for SDE CV -->
+            </div>
+            <div class="download_button_2">
+                <a href="link-to-resume-2">
+                    <img src="../elements/download-white.png" alt="Resume Icon">
+                </a>
+                <p>MLE CV</p> <!-- Text for MLE CV -->
+            </div>
+        </div>
+        <div class="header__hamburger" onclick="toggleMenu()">
+            <div class="bar hamburger__bar1"></div>
+            <div class="bar hamburger__bar2"></div>
+            <div class="bar hamburger__bar3"></div>
+        </div>
+        <div class="linkedin">
+            <a href="https://www.linkedin.com/in/abhirup-chakravarty/">
+                <img src="../elements/linkedin-logo-white.png" alt="LinkedIn Logo">
+            </a>
+        </div>
+        <div class="github">
+            <a href="https://github.com/achak98">
+                <img src="../elements/github-logo-white.png" alt="GitHub Logo">
+            </a>
+        </div>
+    </div>
+    <div id="iris"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../scripts/script-achieve.js"></script>
 </body>
 </html>

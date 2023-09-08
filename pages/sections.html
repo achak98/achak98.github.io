@@ -1,38 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sections</title>
     <link rel="stylesheet" href="../styles/style-sections.css">
 </head>
-<body>
-    <div class="joke" id = "joke"></div>
-    <div class="logo-container">
-        <!-- Logo 1 -->
-        <a href="https://github.com/achak98">
-            <img src="../elements/github-logo-orange.png" alt="Logo 1">
-        </a>
-        <!-- Logo 2 -->
-        <a href="https://www.linkedin.com/in/abhirup-chakravarty/">
-            <img src="../elements/linkedin-logo-blue.png" alt="Logo 2">
-        </a>
-        <a href="link-to-resume-1">
-            <img src="../elements/download-yellow.png" alt="Logo 2">
-        </a>
-        
-    </div>
 
-    <div class="circle-layout hidden" id = "circle-layout">
-        <div class="outer-circle"></div>
-        <div class="inner-circles">
-            <a href="sections.html" class="circle" ></a>
-            <a href="page2.html" class="circle" ></a>
-            <a href="page3.html" class="circle" ></a>
-            <a href="page4.html" class="circle" ></a>
-            <a href="page5.html" class="circle" ></a>
+<body>
+    <div class="joke" id="joke"></div>
+    <div class="logo-container">
+        <div class="github">
+            <a href="https://github.com/achak98">
+                <img src="../elements/github-logo-orange.png" alt="GitHub Logo">
+            </a>
+        </div>
+        <div class="linkedin">
+            <a href="https://www.linkedin.com/in/abhirup-chakravarty/">
+                <img src="../elements/linkedin-logo-blue.png" alt="LinkedIn Logo">
+            </a>
+        </div>
+        <div class="header__hamburger" onclick="toggleMenu()">
+            <div class="bar hamburger__bar1"></div>
+            <div class="bar hamburger__bar2"></div>
+            <div class="bar hamburger__bar3"></div>
+        </div>
+        <div class="openDownloadWindowDiv">
+            <div class="download_button_1">
+                <a href="link-to-resume-1">
+                    <img src="../elements/download-yellow.png" alt="Resume Icon">
+                </a>
+                <p>SDE CV</p> <!-- Text for SDE CV -->
+            </div>
+            <div class="download_button_2">
+                <a href="link-to-resume-2">
+                    <img src="../elements/download-yellow.png" alt="Resume Icon">
+                </a>
+                <p>MLE CV</p> <!-- Text for MLE CV -->
+            </div>
         </div>
     </div>
+
+    <div class="circle-layout hidden" id="circle-layout">
+        <div class="outer-circle"></div>
+        <div class="inner-circles">
+            <a href="sections.html" class="circle"></a>
+            <a href="page2.html" class="circle"></a>
+            <a href="page3.html" class="circle"></a>
+            <a href="page4.html" class="circle"></a>
+            <a href="page5.html" class="circle"></a>
+        </div>
+    </div>
+
     <script src="../scripts/script-sections.js"></script>
 </body>
+
 </html>

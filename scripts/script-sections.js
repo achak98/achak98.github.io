@@ -156,3 +156,11 @@ circles.forEach((circle) => {
         }
     });
 });
+
+function toggleMenu() {
+    console.log("called")
+    y = document.querySelector(".header__hamburger");
+    downloadbuttons = document.querySelector(".openDownloadWindowDiv");
+    y.classList.toggle("click");
+    downloadbuttons.classList.toggle("click");
+  }

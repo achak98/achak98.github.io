@@ -4,11 +4,11 @@ body {
     padding: 0;
     font-family: 'Lato';
     overflow: hidden; /* Hide horizontal overflow */
-    background-color: #ffffff;
+    background-color: whitesmoke;
 }
 
 .welcome {
-    background-color: #ffffff; /* Egg yolk color */
+    background-color: whitesmoke; /* Egg yolk color */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@ body {
 
 .welcome-content {
     text-align: center;
-    color: #fff;
+    color: whitesmoke;
 }
 
 .welcome h1 {
@@ -72,13 +72,13 @@ body {
 .deadlines {
     bottom: 65%;
     position: absolute;
-    color: #fff;
+    color: whitesmoke;
 }
 
 .me {
     bottom: 60%;
     position: absolute;
-    color: #fff;
+    color: whitesmoke;
 }
 
 .person {

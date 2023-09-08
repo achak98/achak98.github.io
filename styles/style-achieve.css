@@ -3,5 +3,337 @@ body {
     padding: 0;
     font-family: 'Lato';
     overflow: hidden; /* Hide horizontal overflow */
-    background-color: #fdfd96;
+    background-color: #F4C94F;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+    min-height: 100vh; /* Set a minimum height to fill the viewport */
 }
+
+div#iris {
+    width: auto;
+    /* adjust these initial dimensions to get the edges of the initial iris just out of view */
+    right: -50%;
+    left: -50%;
+    top: -50%;
+    height: auto;
+    box-shadow: 0px 0px 0px 100rem #4f646f;
+    position: absolute;
+    display: none;
+    border-radius: 50%;
+    z-index: 999;
+}
+div#iris.collapse {
+    display: block;
+    -webkit-animation: collapse 2s ease-in-out;
+}
+div#iris:after {
+    content: '';
+    display: block;
+    /* maintains a 1:1 aspect ration for perfect circle */
+    padding-top: 100%;
+}
+@-webkit-keyframes collapse {
+     0% {
+        top: -50%;
+        left: -50%;
+        right: -50%;
+    }
+    /* adjust these coordinates to change where the wipe centers */
+    100% {
+         top: 50vh;
+        /* left + right should equal 100 to guarantee a complete wipe */
+        left: 50vw;
+        right: 50vw;
+    }
+}
+
+.cross-button {
+    position: absolute;
+    top: 1.5vw;
+    left: 2vw;
+    z-index: 999;
+}
+.cross-button a {
+    display: block; /* Make the entire area clickable */
+    margin-bottom: 1vw; /* Adjust as needed for spacing between logos */
+}
+.cross-button.closing{
+    opacity: 0;
+}
+
+.cross-button img {
+    width: 3vw; /* Adjust the logo size as needed */
+    height: 3vw; /* Maintain aspect ratio */
+}
+
+.logo-container.closing {
+    opacity: 0;
+}
+
+.circle-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 2.6vw;
+    position: fixed;
+    right: 3vw;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+.circle-bar.closing{
+    opacity: 0;
+}
+
+.line {
+    width: 0.2vw; /* Adjust the width of the line as needed */
+    height: 100%; /* Make the line stretch from top to bottom */
+    background-color: #f5f5f5; /* Set the line color to white */
+    position: absolute; /* Position the line absolutely within the circle-bar */
+    left: 50%; /* Position the line horizontally in the middle of circle-bar */
+    transform: translateX(-50%); /* Center the line horizontally within circle-bar */
+}
+
+.circle {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 999;
+}
+
+.selected{
+    transition: transform 0.3s ease;
+    transform: scale(1.6);
+}
+
+
+.paragraph {
+    margin: 0;
+    padding: 0vw;
+    position: absolute;
+    top: 50%;
+    width: 80vw;
+    transform: translateY(-45%) translateX(-50%);
+    align-content: justify;
+    width: 80%;
+    max-width: 80vw; /* Adjust the maximum width as needed */
+    color:whitesmoke;
+    font-size: 1.8vw;
+    text-align: justify;
+    animation: 1.3s ease;   
+}
+
+.paragraph.selected-paragraph.blend-in{
+    animation: 1.5s ease-in-out, blend-in 1.5s ease-in-out;
+}
+.paragraph.selected-paragraph.closing{
+    opacity: 0;
+}
+@keyframes blend-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.paragraph.selected-paragraph.closing{
+    opacity: 0;
+}
+  .unselected-paragraph-up{
+    top: -150%;
+    animation:  1.3s ease, slideUpOutOfFrame 1.3s ease;
+  }
+  .unselected-paragraph-down{
+    top: 150%;
+    animation: 1s ease-in-out, slideDownOutOfFrame 1.3s ease;
+  }
+  .selected-paragraph {
+    top:50%;
+    animation: 1.4s ease;
+  }
+  .never-shown{
+    opacity: 0;
+  }
+    
+  @keyframes slideDownIntoFrame {
+    0% {
+        top: -150%; /* Start position */
+    }
+    100% {
+        top: 50%; /* End position (middle of the screen) */
+    }
+  }
+  
+  @keyframes slideDownOutOfFrame {
+    0% {
+        top: 50%; /* Start position */
+    }
+    100% {
+        top: 150%; /* End position (middle of the screen) */
+    }
+  }
+  
+  @keyframes slideUpIntoFrame {
+    0% {
+        top: 150%; /* Start position */
+    }
+    100% {
+        top: 50%; /* End position (middle of the screen) */
+    }
+  }
+  
+  @keyframes slideUpOutOfFrame {
+    0% {
+        top: 50%; /* Start position */
+    }
+    100% {
+        top: -150%; /* End position (middle of the screen) */
+    }
+  }
+
+
+.logo-container {
+    position: fixed;
+    bottom: 2vw;
+    left: 2vw; /* Adjust the right property to align horizontally */
+    z-index: 999;
+    height: min-content;
+    width: min-content;
+}
+
+/* Logo styles */
+.logo-container a {
+    display: block;
+    margin-bottom: 1vw;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logo-container img {
+    width: 2.8vw;
+    height: 2.8vw;
+}
+
+.bar {
+    border-radius: 1vw;
+    position: relative; /* Change to relative positioning */
+    width: 3.2vw;
+    height: 0.4vh;
+    margin-bottom: 0.4vw;
+    background-color: whitesmoke;
+    transition: 0.5s;
+}
+
+.hamburger__bar1,
+.hamburger__bar2,
+.hamburger__bar3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hamburger__bar1 {
+    transform: translate(-50%, -50%) translateY(-0.8vw);
+    position: absolute; /* Change to absolute positioning */
+}
+
+.hamburger__bar3 {
+    transform: translate(-50%, -50%) translateY(0.8vw);
+    position: absolute; /* Change to absolute positioning */
+}
+
+
+.click .hamburger__bar1 {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.click .hamburger__bar2{
+    opacity: 0;
+    
+}
+.click .hamburger__bar3{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.openDownloadWindowDiv{
+    position: absolute;
+    display: block;
+    opacity: 0;
+    margin-bottom: 2vw;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.download_button_1 div,
+.download_button_2 div {
+    display: flex;
+    align-items: center; /* Vertically center align text and image */
+}
+.download_button_1{
+    transform: translateY(-2.8vw);
+}
+
+.download-text{
+    color:whitesmoke
+}
+
+.logo-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Three columns for icons and text */
+    grid-gap: 10px; /* Adjust the gap between grid items as needed */
+    align-items: center; /* Vertically center-align grid items */
+}
+
+/* Style for individual grid items */
+.github,
+.linkedin,
+.openDownloadWindowDiv,
+.download_button_1,
+.download_button_2{
+    text-align: center; /* Center-align text */
+    position: relative; /* Enable relative positioning */
+}
+.header__hamburger {
+    position: relative; /* Enable relative positioning */
+    margin-bottom: 2.5vw;
+    margin-top: 2vw; /* Adjust as needed for spacing between logos */
+    cursor: pointer;
+    display: block;
+}
+
+.openDownloadWindowDiv.click {
+    opacity: 1; /* Initially set the opacity to 0 */
+    transition: opacity 0.5s ease-in-out; /* Apply a smooth opacity transition */
+}
+
+/* Style for icons (images) */
+.github img,
+.linkedin img,
+.download_button_1 img,
+.download_button_2 img {
+    width: 3.8vw; /* Adjust the icon size as needed */
+    height: 3.8vw; /* Maintain aspect ratio */
+    display: block; /* Ensure images don't affect the text layout */
+    margin: 0 auto; /* Center-align images horizontally */
+}
+
+/* Style for text */
+.github p,
+.linkedin p,
+.download_button_1 p,
+.download_button_2 p {
+    color: whitesmoke;
+    margin: 0; /* Remove default margin for paragraphs */
+}
+
+
