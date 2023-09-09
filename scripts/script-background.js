@@ -118,12 +118,9 @@ function toggleMenu() {
 }
 
 // Get all the paragraphs
-
-let isActive = true;
 function handleWheelEvent(event) {
   let paragraphs = document.querySelectorAll('.paragraph');
   let currentIndex = 1;
-  
 
   paragraphs.forEach((paragraph, i) => {
     if (paragraph.classList.contains('selected-paragraph')) {
@@ -132,10 +129,6 @@ function handleWheelEvent(event) {
   });
   console.log('currentIndex: ', currentIndex);
   // Initial selection
-  if (!isActive) return;
-
-  isActive = false;
-
   const scrollDirection = event.deltaY > 0 ? 'down' : 'up';
   console.log(scrollDirection);
 
@@ -149,16 +142,55 @@ function handleWheelEvent(event) {
     selectParagraph(Math.min(paragraphs.length, currentIndex + 1));
   }
 
-  // Prevent the default scroll behavior
-  event.preventDefault();
-
-  // Delay reactivation by 1 second
-  setTimeout(() => {
-    isActive = true;
-  }, 1000);
 }
 
-// Listen for the wheel event (scroll gestures)
-document.addEventListener('wheel', handleWheelEvent, { passive: false });
+// function throttle(func, wait) {
+//   let isThrottled = false;
+//   return function () {
+//     if (!isThrottled) {
+//       func.apply(this, arguments);
+//       isThrottled = true;
+//       setTimeout(() => {
+//         isThrottled = false;
+//       }, wait);
+//     }
+//   };
+// }
 
 
+// document.addEventListener('wheel', throttle(handleWheelEvent, 1000), { passive: true });
+
+
+// console.log("isActive: ", isActive);
+
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+let lastScrollTime = 0;
+let isActive = true;
+
+document.addEventListener('wheel', function(event) {
+  const currentTime = Date.now();
+  const timeSinceLastScroll = currentTime - lastScrollTime;
+  if (timeSinceLastScroll >= 40) {
+    // This block of code will execute if:
+    // - isActive is true (initial trigger)
+    // - OR there is a gap of at least 50ms since the last scroll event
+    handleWheelEvent(event);
+    
+    // Your event handling code here
+    
+    // Set isActive to false to prevent immediate execution of the next event
+    // isActive = false;
+    
+    // // Set a timeout to allow the next event to run at the beginning
+    // setTimeout(function() {
+    //   isActive = true;
+    // }, 300);
+    
+    // Update lastScrollTime with the current time
+    
+  }
+  lastScrollTime = Date.now();
+}, { passive: false });

@@ -212,7 +212,7 @@ div#iris:after {
     grid-gap: 10px; /* Adjust the gap between grid items as needed */
     position: fixed;
     bottom: 2vw;
-    left: 2vw; /* Adjust the right property to align horizontally */
+    left: 1vw; /* Adjust the right property to align horizontally */
     z-index: 999;
     height: min-content;
     width: min-content;
@@ -230,8 +230,8 @@ div#iris:after {
 }
 
 .logo-container img {
-    width: 2.8vw;
-    height: 2.8vw;
+    width: 2.5vw;
+    height: 2.5vw;
 }
 
 .bar {
@@ -279,7 +279,7 @@ div#iris:after {
     display: block;
 }
 .download_button_1{
-    transform: translateY(-2.8vw);
+    transform: translateY(-2.5vw);
 }
 
 .download-text{
@@ -320,17 +320,18 @@ div#iris:after {
 }
 
 .bar-container{
-    width:2.8vw;
-    height: 2.8vw;
+    width:2.5vw;
+    height: 2.5vw;
 }
 
 /* Style for icons (images) */
 .github img,
 .linkedin img,
+.email img,
 .download_button_1 img,
 .download_button_2 img {
-    width: 2.8vw; /* Adjust the icon size as needed */
-    height: 2.8vw; /* Maintain aspect ratio */
+    width: 2.5vw; /* Adjust the icon size as needed */
+    height: 2.5vw; /* Maintain aspect ratio */
     display: block; /* Ensure images don't affect the text layout */
     margin: 0 2vw; /* Center-align images horizontally */
 }

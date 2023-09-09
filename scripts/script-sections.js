@@ -1,20 +1,31 @@
 const circleLayout = document.getElementById('circle-layout');
 
-const text = "These are the five chakras of my life, and God, oh God, am I trying to align them...";
-const typingElement = document.getElementById("joke");
+let joke1 = "These are the five chakras of my life...";
+let joke2 = "and God, oh God, am I trying to align them...";
+const typingElement1 = document.getElementById("joke1");
+const typingElement2 = document.getElementById("joke2");
 let paragraphText = ""; // Initialize an empty string to accumulate paragraph text
-let remainingText = text;
-function typeText() {
+let part_1_done = false;
+function typeText(remainingText, typingElement) {
     const char = remainingText.charAt(0);
     remainingText = remainingText.substring(1);
-    
+    console.log("char: ",char);
+    console.log("remainingText: ",remainingText);
     paragraphText += char; // Accumulate paragraph text
 
     typingElement.innerHTML = `<p>${paragraphText}</p>`;
-
+    console.log("remainingText.length: ",remainingText.length);
     if (remainingText.length > 0) {
-        setTimeout(typeText, 50); // Adjust the delay to control typing speed
+        setTimeout(function () {
+            typeText(remainingText, typingElement); // Pass the function reference
+          }, 50);
+        
+    } else if(!part_1_done){
+        part_1_done = true;
+        paragraphText = "";
+        typeText(joke2, typingElement2);
     }
+
 }
 
 // After a short delay, remove the 'hidden' class to trigger the fade-in effect
@@ -37,7 +48,7 @@ window.onload = function() {
     });
 };
 setTimeout(() => {
-    typeText();
+    typeText(joke1,typingElement1);
 }, 1500); // Adjust the delay as needed
 
 circles.forEach((circle) => {
