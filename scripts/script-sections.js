@@ -105,7 +105,7 @@ circles.forEach((circle) => {
             const totalSteps = (finalWidth - currentWidth) / increment;
 
             // Use setInterval to gradually increase the width and height
-            const finalScale = 40; // Define the final scaling factor
+            const finalScale = 50; // Define the final scaling factor
             let scale_increment = 0.1; // Define the increment for each step
             const scale_intervalDuration = 10; // Adjust the interval duration as needed
             let hover_rad_decrement = 0.1;

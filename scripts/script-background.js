@@ -174,23 +174,7 @@ document.addEventListener('wheel', function(event) {
   const currentTime = Date.now();
   const timeSinceLastScroll = currentTime - lastScrollTime;
   if (timeSinceLastScroll >= 40) {
-    // This block of code will execute if:
-    // - isActive is true (initial trigger)
-    // - OR there is a gap of at least 50ms since the last scroll event
     handleWheelEvent(event);
-    
-    // Your event handling code here
-    
-    // Set isActive to false to prevent immediate execution of the next event
-    // isActive = false;
-    
-    // // Set a timeout to allow the next event to run at the beginning
-    // setTimeout(function() {
-    //   isActive = true;
-    // }, 300);
-    
-    // Update lastScrollTime with the current time
-    
   }
   lastScrollTime = Date.now();
 }, { passive: false });

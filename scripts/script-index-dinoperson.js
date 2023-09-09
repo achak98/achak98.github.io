@@ -38,7 +38,8 @@ let trexPosition = 101; // 90% from the left
 let isChasing = false;
 let personDirection = 1; // 1 represents running to the right, -1 represents running to the left
 let trexDirection = -1;
-let personDirectionChanged = false
+let personDirectionChanged = false;
+let personComingFromLeft = true;
 let trexFlipped = false
 let personFlipped = false
 let personIdleAlready = false
@@ -47,7 +48,7 @@ let trexState = States.IDLE
 trex.style.transform = 'scaleX(-1)';
 function animateChase() {
     if(isChasing){
-        trexPosition += 0.29*trexDirection; // Move the T-Rex to the left (faster)
+        trexPosition += 0.25*trexDirection; // Move the T-Rex to the left (faster)
     }else if(personState!=States.IDLE & personState!=States.WALK & trexState != States.IDLE){
         changeGIFPerson('walk');
         changeGIFTrex('idle');
@@ -64,7 +65,7 @@ function animateChase() {
             personState=States.WALK
         }, 1500);   
     }
-    if (!personDirectionChanged & (personPosition < 100 || personPosition > 0) & Math.abs(personPosition-trexPosition) <12){
+    if (!personDirectionChanged & (personPosition < 100 || personPosition > 0) & ((personComingFromLeft & Math.abs(personPosition-trexPosition) <10) || (!personComingFromLeft & Math.abs(personPosition-trexPosition) <25))){
         personDirection*=-1
 
         changeGIFPerson('run');
@@ -79,7 +80,7 @@ function animateChase() {
         }
         personDirectionChanged = true
     }
-    if (!isChasing & Math.abs(personPosition-trexPosition) < 60){
+    if (!isChasing & Math.abs(personPosition-trexPosition) < 65){
         isChasing = true
         if (personPosition-trexPosition < 0){
             trexDirection = -1
@@ -97,7 +98,7 @@ function animateChase() {
         if (personState == States.WALK){
             personPosition += 0.07 * personDirection; // Move the person in their current direction 
         }else if (personState == States.RUN){
-            personPosition += 0.30 * personDirection; // Move the person in their current direction 
+            personPosition += 0.27 * personDirection; // Move the person in their current direction 
         }
         
     }
@@ -110,9 +111,11 @@ function animateChase() {
         if (personPosition>=100){
             personPosition = -10
             personDirection = 1;
+            personComingFromLeft = true;
         }else{
             personPosition = 110
             personDirection = -1;
+            personComingFromLeft = false;
         }
         personIdleAlready = false
     }
