@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: 'Lato';
     overflow: hidden; /* Hide horizontal overflow */
-    background-color: #F4C94F;
+    background-color: #ec8669;
     display: flex;
     justify-content: center; /* Horizontally center the content */
     align-items: center; /* Vertically center the content */
@@ -131,7 +131,7 @@ div#iris:after {
 }
 
 .paragraph.selected-paragraph.blend-in{
-    animation: 1.5s ease-in-out, blend-in 1.5s ease-in-out;
+    animation: 0.5s ease-in-out, blend-in 0.5s ease-in-out;
 }
 .paragraph.selected-paragraph.closing{
     opacity: 0;
@@ -145,20 +145,25 @@ div#iris:after {
     }
 }
 
-.paragraph.selected-paragraph.closing{
-    opacity: 0;
-}
   .unselected-paragraph-up{
     top: -150%;
-    animation:  1.3s ease, slideUpOutOfFrame 1.3s ease;
+    animation:  0.7s ease, slideUpOutOfFrame 0.7s ease;
   }
   .unselected-paragraph-down{
     top: 150%;
-    animation: 1s ease-in-out, slideDownOutOfFrame 1.3s ease;
+    animation: 0.7s ease, slideDownOutOfFrame 0.7s ease;
   }
+.unselected-paragraph-up-oof{
+    top: -150%;
+    animation: none;
+}
+.unselected-paragraph-down-oof{
+    top: 150%;
+    animation: none;
+}
   .selected-paragraph {
     top:50%;
-    animation: 1.4s ease;
+    animation: 0.7s ease;
   }
   .never-shown{
     opacity: 0;
@@ -202,12 +207,16 @@ div#iris:after {
 
 
 .logo-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Three columns for icons and text */
+    grid-gap: 10px; /* Adjust the gap between grid items as needed */
     position: fixed;
     bottom: 2vw;
-    left: 2vw; /* Adjust the right property to align horizontally */
+    left: 1vw; /* Adjust the right property to align horizontally */
     z-index: 999;
     height: min-content;
     width: min-content;
+    margin-left:auto;
 }
 
 /* Logo styles */
@@ -221,16 +230,15 @@ div#iris:after {
 }
 
 .logo-container img {
-    width: 2.8vw;
-    height: 2.8vw;
+    width: 2.5vw;
+    height: 2.5vw;
 }
 
 .bar {
     border-radius: 1vw;
     position: relative; /* Change to relative positioning */
-    width: 3.2vw;
+    width: 2.4vw;
     height: 0.4vh;
-    margin-bottom: 0.4vw;
     background-color: whitesmoke;
     transition: 0.5s;
 }
@@ -266,32 +274,16 @@ div#iris:after {
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.openDownloadWindowDiv{
-    position: absolute;
-    display: block;
-    opacity: 0;
-    margin-bottom: 2vw;
-    transition: opacity 0.5s ease-in-out;
-}
-
 .download_button_1 div,
 .download_button_2 div {
-    display: flex;
-    align-items: center; /* Vertically center align text and image */
+    display: block;
 }
 .download_button_1{
-    transform: translateY(-2.8vw);
+    transform: translateY(-2.5vw);
 }
 
 .download-text{
     color:whitesmoke
-}
-
-.logo-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Three columns for icons and text */
-    grid-gap: 10px; /* Adjust the gap between grid items as needed */
-    align-items: center; /* Vertically center-align grid items */
 }
 
 /* Style for individual grid items */
@@ -303,28 +295,45 @@ div#iris:after {
     text-align: center; /* Center-align text */
     position: relative; /* Enable relative positioning */
 }
+.openDownloadWindowDiv{
+    display: none;
+    opacity:0;
+    margin-top: 1vw;
+    transition: display 0.5s ease-in-out opacity 0.5s ease-in-out;
+}
+
+.openDownloadWindowDiv.click {
+    display:block;
+    transition: display 0.5s ease-in-out; /* Apply a smooth opacity transition */
+}
+.openDownloadWindowDiv.click.blend-in {
+    opacity: 1; /* Initially set the opacity to 0 */
+    transition: opacity 1s ease-in-out;
+}
+
 .header__hamburger {
     position: relative; /* Enable relative positioning */
-    margin-bottom: 2.5vw;
+    margin-bottom: 1vw;
     margin-top: 2vw; /* Adjust as needed for spacing between logos */
     cursor: pointer;
     display: block;
 }
 
-.openDownloadWindowDiv.click {
-    opacity: 1; /* Initially set the opacity to 0 */
-    transition: opacity 0.5s ease-in-out; /* Apply a smooth opacity transition */
+.bar-container{
+    width:2.5vw;
+    height: 2.5vw;
 }
 
 /* Style for icons (images) */
 .github img,
 .linkedin img,
+.email img,
 .download_button_1 img,
 .download_button_2 img {
-    width: 3.8vw; /* Adjust the icon size as needed */
-    height: 3.8vw; /* Maintain aspect ratio */
+    width: 2.5vw; /* Adjust the icon size as needed */
+    height: 2.5vw; /* Maintain aspect ratio */
     display: block; /* Ensure images don't affect the text layout */
-    margin: 0 auto; /* Center-align images horizontally */
+    margin: 0 2vw; /* Center-align images horizontally */
 }
 
 /* Style for text */
@@ -335,5 +344,20 @@ div#iris:after {
     color: whitesmoke;
     margin: 0; /* Remove default margin for paragraphs */
 }
+#publications p{
+    font-size: 2vw;
+    display:inline-flex;
+}
+#publications p a img{
+    height: 2.5vw;
+    width: 2.5vw;
+    display: block; /* Ensure images don't affect the text layout */
+    margin: 0 2vw; /* Center-align images horizontally */
+    
+}
+
+
+
+
 
 
