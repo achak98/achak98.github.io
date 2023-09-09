@@ -139,10 +139,10 @@ circles.forEach((circle) => {
                             window.location.href = 'extracurriculars.html';
                             break;
                         case 3:
-                            window.location.href = 'projects.html';
+                            window.location.href = 'achievements.html';
                             break;
                         case 4:
-                            window.location.href = 'achievements.html';
+                            window.location.href = 'projects.html';
                             break;
                         default:
                       }
@@ -163,4 +163,7 @@ function toggleMenu() {
     downloadbuttons = document.querySelector(".openDownloadWindowDiv");
     y.classList.toggle("click");
     downloadbuttons.classList.toggle("click");
+    setTimeout(() => {
+        downloadbuttons.classList.toggle("blend-in")
+    }, 100);
   }

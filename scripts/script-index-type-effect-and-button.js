@@ -5,8 +5,11 @@ const dinoperson = document.querySelector('.dinoperson');
 // Delay the blend-in effect and typing animation
 setTimeout(() => {
     const continueButton = document.getElementById('continue-button');
-    continueButton.classList.add('blend-in');
-}, 3500); // Adjust the delay as needed
+    continueButton.classList.add('display');
+    setTimeout(() => {
+        continueButton.classList.add('blend-in');
+    }, 2000);
+}, 2500); // Adjust the delay as needed
 
 continueButton.addEventListener('click', (event) => {
     // Add the slide-up class to initiate the animation

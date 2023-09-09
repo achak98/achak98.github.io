@@ -31,12 +31,12 @@ body {
     color: #ec8669;
 }
 
-#continue-button span {
+.continue-button span {
     font-family: 'Roboto';
     font-size: 16px;
     margin-right: 10px; /* Adjust the margin as needed to control spacing between text and icon */
 }
-#continue-button {
+.continue-button {
     background-color: #ec8669;
     color: #000;
     border: none;
@@ -48,15 +48,20 @@ body {
     bottom: 10vh; /* 5% of the viewport height */
     right: 0vw; /* 5% of the viewport width */
     z-index: 1; /* Ensure it's above the arrow */
-    display: flex; /* Use flexbox for alignment */
+    display: none; /* Use flexbox for alignment */
     align-items: center; /* Vertically align content in the center */
     opacity: 0; /* Initially set the opacity to 0 */
-    transition: opacity 1s ease-in-out; /* Apply a smooth opacity transition */
+    transition: display 1s ease, opacity 1s ease; /* Apply a smooth opacity transition */
 }
 
+.continue-button.display{
+    display: flex;
+    transition: display 1s ease;
+}
 /* Apply blend-in effect when the .blend-in class is added */
-#continue-button.blend-in {
+.continue-button.display.blend-in {
     opacity: 1; /* Set the opacity to 1 to reveal the button */
+    transition: opacity 1s ease; /* Apply a smooth opacity transition */
 }
 
 .dinoperson {
@@ -68,6 +73,23 @@ body {
     background-color: #4f646f;
 }
 
+.playButton {
+    background-color: #ec8669;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    display: block;
+    bottom: 10vh; /* 5% of the viewport height */
+    right: 0vw; /* 5% of the viewport width */
+    z-index: 1; /* Ensure it's above the arrow */
+    align-items: center; /* Vertically align content in the center */
+    opacity: 1; /* Initially set the opacity to 0 */
+    transition: display 1s ease, opacity 1s ease; /* Apply a smooth opacity transition */
+}
 
 .deadlines {
     bottom: 65%;
