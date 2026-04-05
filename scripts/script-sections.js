@@ -1,7 +1,7 @@
 const circleLayout = document.getElementById('circle-layout');
 
-let joke1 = "Six sections. No fluff. Mostly.";
-let joke2 = "...okay, maybe a little fluff.";
+let joke1 = "These are the six chakras of my life...";
+let joke2 = "and God, oh God, am I trying to align them...";
 const typingElement1 = document.getElementById("joke1");
 const typingElement2 = document.getElementById("joke2");
 let paragraphText = ""; // Initialize an empty string to accumulate paragraph text
