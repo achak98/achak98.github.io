@@ -25,7 +25,7 @@ continueButton.addEventListener('click', (event) => {
     event.preventDefault();
 });
 
-const text = "Hello, I am Abhirup Chakravarty*.\nWelcome to my portfolio.";
+const text = "Hello, I am Abhirup Chakravarty*.\nI teach machines to read essays so I don't have to.";
 const typingElement = document.getElementById("welcome-content");
 let headerText = ""; // Initialize an empty string to accumulate header text
 let paragraphText = ""; // Initialize an empty string to accumulate paragraph text
