@@ -6,16 +6,16 @@ const person_gif = document.getElementById('person_gif');
 const trex_gif = document.getElementById('trex_gif');
 // Define cases and corresponding GIF URLs
 const cases_person = {
-    'walk': 'elements/person/walk.gif',
-    'run': 'elements/person/run.gif',
-    'idle': 'elements/person/idle.gif',
+    'walk': 'assets/person/walk.gif',
+    'run': 'assets/person/run.gif',
+    'idle': 'assets/person/idle.gif',
     default: 'default.gif', // Fallback GIF
 };
 
 const cases_trex = {
-    'walk': 'elements/dino/walk.gif',
-    'run': 'elements/dino/run.gif',
-    'idle': 'elements/dino/idle.gif',
+    'walk': 'assets/dino/walk.gif',
+    'run': 'assets/dino/run.gif',
+    'idle': 'assets/dino/idle.gif',
     default: 'default.gif', // Fallback GIF
 };
 

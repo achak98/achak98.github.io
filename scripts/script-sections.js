@@ -1,6 +1,6 @@
 const circleLayout = document.getElementById('circle-layout');
 
-let joke1 = "These are the five chakras of my life...";
+let joke1 = "These are the six chakras of my life...";
 let joke2 = "and God, oh God, am I trying to align them...";
 const typingElement1 = document.getElementById("joke1");
 const typingElement2 = document.getElementById("joke2");
@@ -144,15 +144,18 @@ circles.forEach((circle) => {
                             window.location.href = 'background.html';    
                             break;
                         case 1:
-                            window.location.href = 'work-experience.html';
+                            window.location.href = 'education.html';
                             break;
                         case 2:
-                            window.location.href = 'extracurriculars.html';
+                            window.location.href = 'work-experience.html';
                             break;
                         case 3:
-                            window.location.href = 'achievements.html';
+                            window.location.href = 'extracurriculars.html';
                             break;
                         case 4:
+                            window.location.href = 'achievements.html';
+                            break;
+                        case 5:
                             window.location.href = 'projects.html';
                             break;
                         default:

@@ -206,32 +206,30 @@ div#iris:after {
   }
 
 
-.logo-container {
+  .logo-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr); /* Three columns for icons and text */
-    grid-gap: 10px; /* Adjust the gap between grid items as needed */
     position: fixed;
-    bottom: 2vw;
-    left: 1vw; /* Adjust the right property to align horizontally */
+    bottom: 4%;
+    left: 1%; /* Adjust the right property to align horizontally */
     z-index: 999;
-    height: min-content;
-    width: min-content;
+    padding-left: 1vw;
     margin-left:auto;
 }
 
 /* Logo styles */
 .logo-container a {
     display: block;
-    margin-bottom: 1vw;
     font-size: 16px;
     border: none;
+    margin-bottom: 35%;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .logo-container img {
-    width: 2.5vw;
-    height: 2.5vw;
+    width: 2.8vw;
+    height: 2.8vw;
 }
 
 .bar {
@@ -279,7 +277,7 @@ div#iris:after {
     display: block;
 }
 .download_button_1{
-    transform: translateY(-2.5vw);
+    transform: translateY(-2.8vw);
 }
 
 .download-text{
@@ -293,7 +291,7 @@ div#iris:after {
 .download_button_1,
 .download_button_2{
     text-align: center; /* Center-align text */
-    position: relative; /* Enable relative positioning */
+
 }
 .openDownloadWindowDiv{
     display: none;
@@ -313,15 +311,13 @@ div#iris:after {
 
 .header__hamburger {
     position: relative; /* Enable relative positioning */
-    margin-bottom: 1vw;
-    margin-top: 2vw; /* Adjust as needed for spacing between logos */
     cursor: pointer;
     display: block;
 }
 
 .bar-container{
-    width:2.5vw;
-    height: 2.5vw;
+    width:2.8vw;
+    height: 2.8vw;
 }
 
 /* Style for icons (images) */
@@ -330,10 +326,10 @@ div#iris:after {
 .email img,
 .download_button_1 img,
 .download_button_2 img {
-    width: 2.5vw; /* Adjust the icon size as needed */
-    height: 2.5vw; /* Maintain aspect ratio */
+    width: 2.8vw; /* Adjust the icon size as needed */
+    height: 2.8vw; /* Maintain aspect ratio */
     display: block; /* Ensure images don't affect the text layout */
-    margin: 0 2vw; /* Center-align images horizontally */
+
 }
 
 /* Style for text */
@@ -344,6 +340,22 @@ div#iris:after {
     color: whitesmoke;
     margin: 0; /* Remove default margin for paragraphs */
 }
+
+
+.techstack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.techstack div {
+    background-color: #4f646f;
+    color: whitesmoke;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
 #publications p{
     font-size: 2vw;
     display:inline-flex;

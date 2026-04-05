@@ -3,108 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background</title>
+    <title>Projects</title>
     <link rel="stylesheet" href="../styles/style-projects.css">
 </head>
 <body>
     <div class="circle-bar">
         <div class="circle selected" onclick="selectParagraph(1)"></div>
         <div class="circle" onclick="selectParagraph(2)"></div>
-        <div class="circle" onclick="selectParagraph(3)"></div>
-        <div class="circle" onclick="selectParagraph(4)"></div>
-        <div class="circle" onclick="selectParagraph(5)"></div>
-        <div class="circle" onclick="selectParagraph(6)"></div>
         <div class="line"></div>
     </div>
-      
+
     <div class="content">
         <div class="paragraph selected-paragraph blend-in" id="paragraph1">
-            <h2>Associate Software Engineer - Backend</h2>
-            <p>Tekion Corp, Bengaluru, India</p>
-            <p>July 2021 - July 2022</p>
-            <p>• Enhanced product retrieval speed by 50%, redesigning object storage with optimized metadata indexing using Elastic Search, improved filtration, and RESTful APIs. Implemented robust CI/CD pipelines with automated unit tests using JUnit 5, improving code coverage and application resilience from 60% to 85%. </p>
-            <p>• Streamlined dealer management and retail management system communication through efficient message passing via Kafka, achieving a 40% faster response time and reducing resource usage by 20%.</p>
-            <p class = "corner-pto" id="corner-pto">(Continued in the Next Page)</p>
+            <h2>BOOST</h2>
+            <p>Cambridge University Press &amp; Assessment</p>
+            <p>November 2024</p>
+            <p>&bull; An LLM-powered chatbot integrating 40 Cambridge Write&amp;Improve tasks that helps English learners improve planning and writing.</p>
+            <p>&bull; Using Task and Retrieval Augmented Generation (TAG, RAG), scaffolded dialogue, multi-stage prompting, personalised pedagogical questioning &amp; CE rubric-augmented feedback generation.</p>
+            <p>&bull; Increased feedback delivery speed significantly, improving user task completion rates by 22% during pilot deployment.</p>
         </div>
         <div class="paragraph never-shown unselected-paragraph-down" id="paragraph2">
-            <h2>Associate Software Engineer - Backend</h2>
-            <p>Tekion Corp, Bengaluru, India</p>
-            <p>July 2021 - July 2022</p>
-            <p>• Integrated geolocalized solutions and custom features via Redis, MongoDB, and Elastic Search, which contributed to a 27% increase in company net worth upon adoption by the client.</p>
-            <p>• Orchestrated Spring microservices to optimize downstream modules, ensuring robustness and scalability across seven submodules spanning four services and delivered 13 major releases to clients over one year, leveraging Agile Scrum methodology and tools such as Confluence and Jira.</p>
-            <p class = "corner-pto" id="corner-pto">(Continued in the Next Page)</p>
-        </div>
-        <div class="paragraph never-shown unselected-paragraph-down" id="paragraph3">
-            <h2>Associate Software Engineer - Backend</h2>
-            <p>Tekion Corp, Bengaluru, India</p>
-            <p>July 2021 - July 2022</p>
-            <p>Tech Stack:: </p>
-        </div>
-        <div class="paragraph never-shown unselected-paragraph-down" id="paragraph4">
-            <h2>Backend Software Intern</h2>
-            <p>Tekion Corp, Bengaluru, India</p>
-            <p>Jan 2021 - July 2021</p>
-            <p>• Developed a web application for employee reservation systems for office space reservations to address COVID-19 pandemic-based restrictions, serving 3k+ employees daily and saving over 12 hours of work per week.</p>
-            <p>• Reduced the time for a user to reserve an area in the office space by implementing Async (Asynchronous) calls and Kafka into the microservice architecture using Spring MVC and Agile Scrum methodologies, which resulted in a 60% decrease in time.</p>
-            <p class = "corner-pto" id="corner-pto">(Continued in the Next Page)</p>
-        </div>
-        <div class="paragraph never-shown unselected-paragraph-down" id="paragraph5">
-            <h2>Backend Software Intern</h2>
-            <p>Tekion Corp, Bengaluru, India</p>
-            <p>Jan 2021 - July 2021</p>
-            <p>• Implemented a REST API in Java to support a single-page application with Spring Boot, Spring Data JPA, MySQL, and CI/CD principles.</p>
-            <p>• Developed unit and integration tests to ensure the code met requirements in the application, improving reliability with automation testing.</p>
-            <p class = "corner-pto" id="corner-pto">(Continued in the Next Page)</p>
-        </div>
-        <div class="paragraph never-shown unselected-paragraph-down" id="paragraph6">
-            <h2>Backend Software Intern</h2>
-            <p>Tekion Corp, Bengaluru, India</p>
-            <p>Jan 2021 - July 2021</p>
-            <p>Tech Stack:: </p>
+            <h2>Contextual Transformer AES</h2>
+            <p>University of Edinburgh</p>
+            <p>April 2023 - August 2023</p>
+            <p>&bull; Analysed the role of contextual information in Automated Essay Scoring using 12,876 essays from the ASAP-AES dataset.</p>
+            <p>&bull; Evaluated context sensitivity across RoBERTa, DeBERTaV3, and Longformer models, using Quadratic Weighted Kappa (QWK) and Mean Squared Error (MSE).</p>
+            <p>&bull; Achieved an average QWK of 0.823 across all prompts; reached 0.8697 QWK in intra-set training, outperforming SoTA transformer models.</p>
         </div>
     </div>
     <div class="cross-button" id="cross-button">
         <a href="sections.html">
-            <img src="../elements/cross-white.png" alt="Logo 1">
+            <img src="../assets/cross-white.png" alt="Logo 1">
         </a>
     </div>
     <div id="logo-container" class="logo-container">
         <div class="openDownloadWindowDiv">
-            <div class="download_button_1">
-                <a href="link-to-resume-1">
-                    <img src="../elements/download-white.png" alt="Resume Icon">
+            <div class="download_button">
+                <a href="../assets/Abhirup Chakravarty - Resume.pdf" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/cv-white.png" alt="Resume Icon">
                 </a>
-                <p>SDE CV</p> <!-- Text for SDE CV -->
             </div>
-            <div class="download_button_2">
-                <a href="link-to-resume-2">
-                    <img src="../elements/download-white.png" alt="Resume Icon">
+            <div class="linkedin">
+                <a href="https://www.linkedin.com/in/abhirup-chakravarty/" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/linkedin-logo-white.png" alt="LinkedIn Logo">
                 </a>
-                <p>MLE CV</p> <!-- Text for MLE CV -->
+            </div>
+            <div class="github">
+                <a href="https://github.com/achak98" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/github-logo-white.png" alt="GitHub Logo">
+                </a>
+            </div>
+            <div class="email">
+                <a href="mailto:abhirupchakravarty1@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <img src="../assets/email-white.png" alt="Email Logo">
+                </a>
             </div>
         </div>
         <div class="header__hamburger" onclick="toggleMenu()">
-            <div class ="bar-container">
+            <div class="bar-container">
                 <div class="bar hamburger__bar1"></div>
                 <div class="bar hamburger__bar2"></div>
                 <div class="bar hamburger__bar3"></div>
             </div>
         </div>
-        <div class="linkedin">
-            <a href="https://www.linkedin.com/in/abhirup-chakravarty/">
-                <img src="../elements/linkedin-logo-white.png" alt="LinkedIn Logo">
-            </a>
-        </div>
-        <div class="github">
-            <a href="https://github.com/achak98">
-                <img src="../elements/github-logo-white.png" alt="GitHub Logo">
-            </a>
-        </div>
-        <div class="email">
-            <a href="mailto:abhirupchakravarty1@gmail.com">
-                <img src="../elements/email-white.png" alt="Email Logo">
-            </a>
-        </div>
+
     </div>
     <div id="iris"></div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
