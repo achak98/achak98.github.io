@@ -97,7 +97,7 @@ body {
 .circle:nth-child(3) { --angle: -120deg; background-color: #6A7FDB;}
 .circle:nth-child(4) { --angle: -180deg; background-color: #ec8669;}
 .circle:nth-child(5) { --angle: -240deg; background-color: #F4C94F;}
-.circle:nth-child(6) { --angle: -300deg; background-color: #F4C94F;}
+.circle:nth-child(6) { --angle: -300deg; background-color: #6A7FDB;}
 
 
 

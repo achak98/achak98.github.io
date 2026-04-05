@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: 'Lato';
     overflow: hidden; /* Hide horizontal overflow */
-    background-color: #ec8669;
+    background-color: #F4C94F;
     display: flex;
     justify-content: center; /* Horizontally center the content */
     align-items: center; /* Vertically center the content */
@@ -356,16 +356,16 @@ div#iris:after {
     border-radius: 50px;
 }
 
-#publications p{
-    font-size: 2vw;
-    display:inline-flex;
+.paragraph p a {
+    display: inline;
+    vertical-align: middle;
 }
-#publications p a img{
-    height: 2.5vw;
-    width: 2.5vw;
-    display: block; /* Ensure images don't affect the text layout */
-    margin: 0 2vw; /* Center-align images horizontally */
-    
+.paragraph p a img {
+    height: 1.8vw;
+    width: 1.8vw;
+    display: inline;
+    vertical-align: middle;
+    margin-left: 0.5vw;
 }
 
 
